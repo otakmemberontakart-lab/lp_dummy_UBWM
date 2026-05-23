@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usia Bertambah, Wajah Mengencang — Metode Alami 5 Menit Sehari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===================== TOKENS ===================== */
+    :root {
+      --terracotta:   #C4714A;
+      --terracotta-d: #b0603d;
+      --dusty-rose:   #D9A89C;
+      --cream:        #FAF3EC;
+      --espresso:     #2C1A0E;
+      --sand:         #E8D5C0;
+      --sage:         #7A9E7E;
+      --white-soft:   #FFFDF9;
+      --text-muted:   #7a6155;
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans:  'Plus Jakarta Sans', sans-serif;
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+
+      --shadow-card: 0 8px 32px rgba(44,26,14,0.10);
+      --shadow-lift: 0 16px 48px rgba(44,26,14,0.14);
+    }
+
+    /* ===================== RESET ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--espresso);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===================== UTILITIES ===================== */
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container--wide {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section--dark {
+      background: var(--espresso);
+      color: var(--white-soft);
+    }
+    .section--sand {
+      background: var(--sand);
+    }
+    .section--white {
+      background: var(--white-soft);
+    }
+    .section--terracotta {
+      background: var(--terracotta);
+      color: var(--white-soft);
+    }
+
+    h1, h2, h3 { font-family: var(--font-serif); }
+    h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.15; font-weight: 700; }
+    h2 { font-size: clamp(22px, 3.5vw, 36px); line-height: 1.25; font-weight: 600; }
+    h3 { font-size: clamp(18px, 2.5vw, 24px); line-height: 1.35; font-weight: 600; }
+
+    .text-muted  { color: var(--text-muted); }
+    .text-center { text-align: center; }
+    .text-italic { font-style: italic; }
+
+    /* ===================== FADE-UP ANIMATION ===================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.10s; }
+    .delay-2 { transition-delay: 0.22s; }
+    .delay-3 { transition-delay: 0.34s; }
+
+    /* ===================== CTA BUTTON ===================== */
+    .btn-cta {
+      display: inline-block;
+      background: var(--terracotta);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 600;
+      padding: 18px 36px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      animation: pulse-soft 2.8s ease-in-out infinite;
+    }
+    .btn-cta:hover {
+      background: var(--terracotta-d);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(196,113,74,0.35);
+    }
+    .btn-cta--white {
+      background: #fff;
+      color: var(--terracotta);
+    }
+    .btn-cta--white:hover {
+      background: var(--cream);
+    }
+    @keyframes pulse-soft {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(196,113,74,0.35); }
+      50%       { box-shadow: 0 0 0 12px rgba(196,113,74,0); }
+    }
+
+    /* trust micro-copy */
+    .trust-line {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .trust-line span::before { content: "✓ "; color: var(--sage); }
+    .trust-line--dark span  { color: var(--text-muted); }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      position: relative;
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--espresso);
+    }
+    .hero__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      animation: ken-burns 14s ease-in-out infinite alternate;
+      opacity: 0.55;
+    }
+    @keyframes ken-burns {
+      0%   { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(44,26,14,0.25) 0%,
+        rgba(44,26,14,0.60) 55%,
+        rgba(44,26,14,0.88) 100%
+      );
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 60px 24px 80px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero__eyebrow {
+      display: inline-block;
+      background: rgba(196,113,74,0.25);
+      border: 1px solid rgba(196,113,74,0.55);
+      color: #f0c8b4;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .hero__title {
+      color: #fff;
+      margin-bottom: 22px;
+      text-shadow: 0 2px 16px rgba(44,26,14,0.4);
+    }
+    .hero__title em {
+      font-style: italic;
+      color: #f0c8b4;
+    }
+    .hero__sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      max-width: 540px;
+      margin: 0 auto 36px;
+    }
+
+    /* ===================== PAIN SECTION ===================== */
+    #pain {
+      background: var(--cream);
+    }
+    .pain__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .pain__img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lift);
+      aspect-ratio: 4/5;
+    }
+    .pain__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .pain__img-wrap:hover img { transform: scale(1.03); }
+    .pain__eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+    .pain__list {
+      list-style: none;
+      margin: 24px 0;
+    }
+    .pain__list li {
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      font-size: 15.5px;
+      color: var(--espresso);
+      border-bottom: 1px solid rgba(196,113,74,0.12);
+    }
+    .pain__list li::before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      color: var(--terracotta);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    .pain__quote {
+      background: var(--sand);
+      border-left: 3px solid var(--terracotta);
+      padding: 18px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--espresso);
+      margin-top: 28px;
+    }
+
+    /* ===================== REFRAME (dark) ===================== */
+    #reframe {
+      background: var(--espresso);
+      color: var(--white-soft);
+    }
+    .reframe__inner {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .reframe__inner h2 { color: #f0c8b4; margin-bottom: 24px; }
+    .reframe__inner p  { color: rgba(255,255,255,0.82); font-size: 17px; margin-bottom: 16px; }
+    .reframe__pill {
+      display: inline-block;
+      background: rgba(196,113,74,0.18);
+      border: 1px solid rgba(196,113,74,0.4);
+      color: #f0c8b4;
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 16px;
+    }
+
+    /* ===================== 3-LIFT CARDS ===================== */
+    #method {
+      background: var(--white-soft);
+    }
+    .method__title {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .method__sub {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 52px;
+      font-size: 16px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      border-top: 4px solid var(--terracotta);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lift);
+    }
+    .card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .card__icon--muscle { background: rgba(196,113,74,0.12); }
+    .card__icon--flow   { background: rgba(217,168,156,0.22); }
+    .card__icon--habit  { background: rgba(122,158,126,0.15); }
+    .card__label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+    .card h3 { margin-bottom: 12px; }
+    .card p { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ===================== SOCIAL PROOF ===================== */
+    #proof {
+      background: var(--sand);
+    }
+    .proof__label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+    }
+    .proof__title { text-align: center; margin-bottom: 48px; }
+    .proof__quotes {
+      display: grid;
+      gap: 24px;
+    }
+    .proof__quote {
+      background: var(--white-soft);
+      border-radius: var(--radius-md);
+      padding: 32px 36px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .proof__quote::before {
+      content: "\201C";
+      font-family: var(--font-serif);
+      font-size: 72px;
+      color: var(--dusty-rose);
+      position: absolute;
+      top: 12px;
+      left: 24px;
+      line-height: 1;
+    }
+    .proof__text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--espresso);
+      padding-top: 16px;
+    }
+    .proof__source {
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ===================== PRODUCT BOX ===================== */
+    #product {
+      background: var(--cream);
+    }
+    .product__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .product__mockup {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lift);
+    }
+    .product__mockup img {
+      width: 100%;
+      height: auto;
+    }
+    .product__eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+    .product__items {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .product__item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .product__item-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: rgba(196,113,74,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-top: 2px;
+    }
+    .product__item-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .product__item-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ===================== HOW IT WORKS ===================== */
+    #how {
+      background: var(--espresso);
+      color: var(--white-soft);
+    }
+    .how__title { color: #f0c8b4; text-align: center; margin-bottom: 12px; }
+    .how__sub   { text-align: center; color: rgba(255,255,255,0.65); margin-bottom: 52px; font-size: 16px; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(50% / 3);
+      right: calc(50% / 3);
+      height: 2px;
+      background: linear-gradient(to right, var(--terracotta), var(--dusty-rose), var(--terracotta));
+      opacity: 0.4;
+    }
+    .step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .step__num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 16px rgba(196,113,74,0.4);
+    }
+    .step h3 { color: #f0c8b4; margin-bottom: 10px; font-size: 18px; }
+    .step p   { color: rgba(255,255,255,0.70); font-size: 14.5px; line-height: 1.6; }
+
+    /* ===================== BEFORE AFTER ===================== */
+    #transform {
+      background: var(--white-soft);
+    }
+    .ba__title { text-align: center; margin-bottom: 12px; }
+    .ba__sub   { text-align: center; color: var(--text-muted); margin-bottom: 40px; font-size: 15px; }
+    .ba__wrap  {
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lift);
+    }
+    .ba__wrap img { width: 100%; }
+    .ba__note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ===================== FAQ ACCORDION ===================== */
+    #faq {
+      background: var(--cream);
+    }
+    .faq__title { text-align: center; margin-bottom: 44px; }
+    .faq__list  { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+
+    .faq__item {
+      background: var(--white-soft);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: box-shadow 0.25s ease;
+    }
+    .faq__item.open {
+      box-shadow: var(--shadow-lift);
+    }
+
+    /* trigger button */
+    .faq__trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--espresso);
+      line-height: 1.4;
+      border-left: 3px solid transparent;
+      transition: border-color 0.25s ease, background 0.2s ease;
+    }
+    .faq__trigger:hover {
+      background: rgba(196,113,74,0.04);
+    }
+    .faq__item.open .faq__trigger {
+      border-left-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+
+    /* chevron icon */
+    .faq__chevron {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(196,113,74,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, transform 0.35s ease;
+    }
+    .faq__chevron svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--terracotta);
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.35s ease;
+    }
+    .faq__item.open .faq__chevron {
+      background: var(--terracotta);
+    }
+    .faq__item.open .faq__chevron svg {
+      stroke: #fff;
+      transform: rotate(180deg);
+    }
+
+    /* answer panel — grid trick for smooth height animation */
+    .faq__body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .faq__item.open .faq__body {
+      grid-template-rows: 1fr;
+    }
+    .faq__body-inner {
+      overflow: hidden;
+    }
+    .faq__a {
+      padding: 0 28px 22px 31px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.70;
+      border-left: 3px solid var(--terracotta);
+    }
+
+    /* ===================== LIFESTYLE CLOSING ===================== */
+    #lifestyle {
+      background: var(--sand);
+    }
+    .lifestyle__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .lifestyle__img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lift);
+      aspect-ratio: 4/5;
+    }
+    .lifestyle__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .lifestyle__img-wrap:hover img { transform: scale(1.03); }
+    .lifestyle__eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+    .lifestyle__content h2 { margin-bottom: 20px; }
+    .lifestyle__content p  { color: var(--text-muted); margin-bottom: 16px; font-size: 16px; }
+    .lifestyle__content .btn-cta { margin-top: 12px; }
+
+    /* ===================== FINAL CTA ===================== */
+    #final-cta {
+      background: var(--terracotta);
+      color: #fff;
+      text-align: center;
+    }
+    #final-cta h2 {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    #final-cta p {
+      color: rgba(255,255,255,0.88);
+      font-size: 18px;
+      max-width: 500px;
+      margin: 0 auto 36px;
+    }
+    .price-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1.5px solid rgba(255,255,255,0.4);
+      padding: 8px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--espresso);
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      font-size: 13px;
+      padding: 32px 24px;
+    }
+
+    /* ===================== STICKY CTA (mobile) ===================== */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--espresso);
+      padding: 14px 20px;
+      z-index: 999;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 -4px 24px rgba(44,26,14,0.22);
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .sticky-cta.show {
+      transform: translateY(0);
+    }
+    .sticky-cta__text {
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .sticky-cta__text strong { color: #fff; display: block; font-size: 15px; }
+    .sticky-cta .btn-cta {
+      animation: none;
+      padding: 12px 22px;
+      font-size: 14px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 768px) {
+      .section { padding: 56px 0; }
+
+      .pain__layout,
+      .product__layout,
+      .lifestyle__layout { grid-template-columns: 1fr; gap: 36px; }
+
+      .cards { grid-template-columns: 1fr; }
+
+      .steps { grid-template-columns: 1fr; gap: 36px; }
+      .steps::before { display: none; }
+
+      .sticky-cta { display: flex; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero">
+  <img
+    class="hero__img"
+    src="https://drive.google.com/thumbnail?id=1M2ZSq-5WV8eJxNUELXbZ29Ft_WxJagkf&sz=w1200"
+    alt="Wanita bercermin dengan percaya diri"
+    loading="eager"
+  />
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <div class="hero__eyebrow fade-up">Metode Alami · Tanpa Alat · Dari Rumah</div>
+    <h1 class="hero__title fade-up delay-1">
+      Wajah Kencang & Segar Lagi —<br/>
+      <em>Cukup 5–10 Menit Sehari</em>
+    </h1>
+    <p class="hero__sub fade-up delay-2">
+      Metode alami dari penelitian ilmuwan Jepang yang bantu wajah terlihat 10 tahun lebih muda. Tanpa skincare ribet, tanpa alat mahal — bisa mulai hari ini dari rumah.
+    </p>
+    <div class="fade-up delay-3">
+      <a href="#final-cta" class="btn-cta">🌿 Ya, Saya Mau Mulai Sekarang — Rp127.000</a>
+      <div class="trust-line">
+        <span>Akses langsung</span>
+        <span>Tanpa biaya bulanan</span>
+        <span>Bisa di HP & laptop</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAIN SECTION ===================== -->
+<section id="pain" class="section">
+  <div class="container--wide">
+    <div class="pain__layout">
+      <div class="pain__img-wrap fade-up">
+        <img
+          src="https://drive.google.com/thumbnail?id=1H4qDc9u2roaicS7kfrXss95rJPI5GWzt&sz=w800"
+          alt="Wanita merenung di depan cermin"
+          loading="lazy"
+        />
+      </div>
+      <div class="fade-up delay-1">
+        <p class="pain__eyebrow">Kamu masih merasa muda di dalam —</p>
+        <h2>Tapi wajah di foto bilang sebaliknya.</h2>
+        <ul class="pain__list">
+          <li>Pipi yang dulu kencang sekarang turun pelan-pelan</li>
+          <li>Garis senyum makin dalam dan terlihat jelas</li>
+          <li>Rahang nggak setegas dulu</li>
+          <li>Area mata terlihat lelah, bahkan pagi hari</li>
+          <li>Makeup nggak lagi cukup menyembunyikannya</li>
+          <li>Skincare bertahun-tahun tetap nggak cukup</li>
+        </ul>
+        <div class="pain__quote">
+          "Aku masih ngerasa muda, tapi wajahku terlihat capek."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFRAME ===================== -->
+<section id="reframe" class="section">
+  <div class="container">
+    <div class="reframe__inner">
+      <h2 class="fade-up">Kenapa wajah bisa terlihat turun — padahal kamu masih muda?</h2>
+      <p class="fade-up delay-1">Bukan cuma soal usia. <strong style="color:#f0c8b4">Otot wajah kamu jarang digerakkan dengan benar.</strong> Postur leher menarik wajah ke bawah tanpa sadar. Ketegangan di rahang dan dahi setiap hari bikin wajah terlihat berat dan lelah.</p>
+      <p class="fade-up delay-2">Ilmuwan Jepang sudah membuktikan ini lewat penelitian mereka tentang aktivasi otot wajah. Dan hasilnya sederhana:</p>
+      <div class="fade-up delay-3">
+        <span class="reframe__pill">Wajah bisa terlihat lebih kencang — bukan karena produk, tapi karena dilatih dengan cara yang benar.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== METODE 3-LIFT ===================== -->
+<section id="method" class="section">
+  <div class="container--wide">
+    <p class="method__title fade-up" style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:8px;">Pendekatan Unik</p>
+    <h2 class="method__title fade-up delay-1">Metode 3-Lift</h2>
+    <p class="method__sub fade-up delay-2">Tiga elemen alami yang bekerja bersama untuk membantu wajah terlihat kencang, segar, dan lebih muda.</p>
+    <div class="cards">
+      <div class="card fade-up">
+        <div class="card__icon card__icon--muscle">💪</div>
+        <p class="card__label">Elemen 01</p>
+        <h3>Muscle Lift</h3>
+        <p>Aktivasi otot wajah yang selama ini pasif. Bantu pipi terlihat lebih penuh, rahang lebih tegas, mata lebih hidup — dari dalam.</p>
+      </div>
+      <div class="card fade-up delay-1">
+        <div class="card__icon card__icon--flow">🤲</div>
+        <p class="card__label">Elemen 02</p>
+        <h3>Flow Lift</h3>
+        <p>Pijatan ringan 2 menit yang bikin wajah terasa rileks seketika. Wajah tampak lebih segar dan kurang lelah setelah selesai.</p>
+      </div>
+      <div class="card fade-up delay-2">
+        <div class="card__icon card__icon--habit">🌿</div>
+        <p class="card__label">Elemen 03</p>
+        <h3>Habit Lift</h3>
+        <p>Kebiasaan kecil harian yang diam-diam mencegah wajah turun lebih cepat. Dari postur leher sampai cara kamu menatap layar HP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOCIAL PROOF ===================== -->
+<section id="proof" class="section">
+  <div class="container">
+    <p class="proof__label fade-up">Yang Mereka Rasakan</p>
+    <h2 class="proof__title fade-up delay-1">Bukan klaim. Ini cerita nyata.</h2>
+    <div class="proof__quotes">
+      <div class="proof__quote fade-up">
+        <p class="proof__text">Jujur aku skeptis. Tapi habis seminggu, temenku yang udah lama nggak ketemu bilang mukaku keliatan lebih seger. Padahal aku nggak ngapa-ngapain kecuali lakuin yang di ebook ini.</p>
+        <p class="proof__source">— Ibu 2 anak, 42 tahun, Bekasi</p>
+      </div>
+      <div class="proof__quote fade-up delay-1">
+        <p class="proof__text">Aku biasanya nggak percaya sama yang kayak gini. Tapi setelah hari ke-7, rahang aku ngerasa enteng banget — kayak selama ini aku nyimpen beban di sana tanpa sadar.</p>
+        <p class="proof__source">— Perempuan 38 tahun, Surabaya</p>
+      </div>
+      <div class="proof__quote fade-up delay-2">
+        <p class="proof__text">Ini bukan sulap. Tapi kok wajahku kelihatan beda ya di foto minggu kedua? Lebih hidup aja. Suami sampai nanya aku pakai apa.</p>
+        <p class="proof__source">— Guru SD, 47 tahun, Bandung</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCT ===================== -->
+<section id="product" class="section">
+  <div class="container--wide">
+    <div class="product__layout">
+      <div class="product__mockup fade-up">
+        <img
+          src="https://drive.google.com/thumbnail?id=1chs0iqXgdD6eFVfFb5h3ZV0eA1y0U9MK&sz=w900"
+          alt="Mockup produk Usia Bertambah Wajah Mengencang"
+          loading="lazy"
+        />
+      </div>
+      <div class="fade-up delay-1">
+        <p class="product__eyebrow">Yang Kamu Dapatkan</p>
+        <h2>Akses langsung begitu pembayaran berhasil.</h2>
+        <div class="product__items">
+          <div class="product__item">
+            <div class="product__item-icon">📖</div>
+            <div>
+              <p class="product__item-title">eBook Utama — Usia Bertambah, Wajah Mengencang</p>
+              <p class="product__item-desc">Panduan lengkap Metode 3-Lift. Semua gerakan, pijatan, dan kebiasaan harian. Bahasa santai, langsung ke inti, nggak pakai teori panjang.</p>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__item-icon">🗒️</div>
+            <div>
+              <p class="product__item-title">Bonus 1: 14-Day Natural Lift Workbook</p>
+              <p class="product__item-desc">Tracker harian 14 hari. Checklist, form refleksi, dan panduan foto progres mingguan supaya kamu bisa lihat sendiri perubahannya.</p>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__item-icon">📋</div>
+            <div>
+              <p class="product__item-title">Bonus 2: Anti-Wajah-Lelah Habit & Progress Guide</p>
+              <p class="product__item-desc">Lembar habit check harian + mini reset 30 detik yang bisa dilakukan 3x sehari. Karena latihan 7 menit nggak akan menang lawan kebiasaan buruk 10 jam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section id="how" class="section">
+  <div class="container--wide">
+    <h2 class="how__title fade-up">Semudah 3 Langkah</h2>
+    <p class="how__sub fade-up delay-1">Mulai hari ini, dari rumah, tanpa persiapan rumit apapun.</p>
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step__num">1</div>
+        <h3>Beli & Langsung Akses</h3>
+        <p>Begitu pembayaran berhasil, semua file langsung bisa didownload ke HP atau laptop kamu.</p>
+      </div>
+      <div class="step fade-up delay-1">
+        <div class="step__num">2</div>
+        <h3>Baca Panduan Utama</h3>
+        <p>Pahami prinsip dasarnya. Nggak sampai 30 menit — bahasa santai, langsung bisa dipahami.</p>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="step__num">3</div>
+        <h3>Mulai Besok Pagi</h3>
+        <p>Di depan cermin, 5–10 menit. Ikuti urutan gerakan, konsisten 14 hari, dan rasakan sendiri bedanya.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BEFORE AFTER ===================== -->
+<section id="transform" class="section">
+  <div class="container">
+    <h2 class="ba__title fade-up">Perbedaannya Nyata — Bukan Sulap</h2>
+    <p class="ba__sub fade-up delay-1">Perubahan yang subtle, natural, dan jujur — bukan hasil filter atau treatment mahal.</p>
+    <div class="ba__wrap fade-up delay-2">
+      <img
+        src="https://drive.google.com/thumbnail?id=1PDRuqUfhAkjUkI3yksXxOlr-9aqV6uar&sz=w900"
+        alt="Before and after wajah lebih segar"
+        loading="lazy"
+      />
+    </div>
+    <p class="ba__note fade-up delay-3">*Hasil individual bisa berbeda. Konsistensi adalah kunci.</p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="section">
+  <div class="container">
+    <h2 class="faq__title fade-up">Yang Sering Ditanyakan</h2>
+    <div class="faq__list">
+
+      <div class="faq__item fade-up">
+        <button class="faq__trigger" aria-expanded="false">
+          <span>Saya udah coba banyak hal, hasilnya nggak kelihatan — ini beda apa?</span>
+          <span class="faq__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq__body" role="region">
+          <div class="faq__body-inner">
+            <p class="faq__a">Kemungkinan besar kamu belum pernah latih <em>otot</em> wajahnya — bukan sekadar lapisan kulitnya. Skincare bekerja di permukaan, tapi tampilan wajah juga dipengaruhi otot, postur, dan ketegangan harian. Ini pendekatan yang berbeda.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-up delay-1">
+        <button class="faq__trigger" aria-expanded="false">
+          <span>Apakah hasilnya permanen?</span>
+          <span class="faq__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq__body" role="region">
+          <div class="faq__body-inner">
+            <p class="faq__a">Sama seperti olahraga tubuh — selama konsisten, hasilnya terjaga. Yang membedakan: ini cuma butuh 5–10 menit sehari, dan bisa jadi rutinitas pagi yang menyenangkan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-up delay-2">
+        <button class="faq__trigger" aria-expanded="false">
+          <span>Apakah ini aman untuk semua usia?</span>
+          <span class="faq__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq__body" role="region">
+          <div class="faq__body-inner">
+            <p class="faq__a">Semua gerakan dirancang ringan dan aman untuk pemula, terutama wanita 35–55 tahun. Ini bukan tindakan medis — ini rutinitas alami seperti olahraga.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-up delay-3">
+        <button class="faq__trigger" aria-expanded="false">
+          <span>Berapa lama hasilnya mulai terasa?</span>
+          <span class="faq__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq__body" role="region">
+          <div class="faq__body-inner">
+            <p class="faq__a">Rasa wajah lebih rileks dan segar biasanya sudah mulai terasa di minggu pertama. Tampilan visual yang lebih konsisten biasanya terlihat setelah 14 hari rutinitas.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIFESTYLE CLOSING ===================== -->
+<section id="lifestyle" class="section">
+  <div class="container--wide">
+    <div class="lifestyle__layout">
+      <div class="lifestyle__img-wrap fade-up">
+        <img
+          src="https://drive.google.com/thumbnail?id=1xpXS1iL5WEyGfRC79NP7dp83598XsDtb&sz=w800"
+          alt="Wanita percaya diri dan segar"
+          loading="lazy"
+        />
+      </div>
+      <div class="lifestyle__content fade-up delay-1">
+        <p class="lifestyle__eyebrow">Ini bukan tentang terlihat sempurna —</p>
+        <h2>Ini tentang kelihatan sepanjang semangat yang kamu rasakan.</h2>
+        <p>Kamu nggak harus mengubah total gaya hidup. Nggak perlu skincare 10 langkah. Nggak perlu treatment mahal.</p>
+        <p>Cukup 5–10 menit sehari, di depan cermin, dengan rutinitas yang benar.</p>
+        <a href="#final-cta" class="btn-cta">🌿 Saya Mau Mulai Sekarang</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section id="final-cta" class="section">
+  <div class="container">
+    <div class="fade-up">
+      <span class="price-badge">Hanya Rp127.000 — Sekali Bayar</span>
+      <h2>Kalau kamu masih membaca sampai sini —<br/>kamu sudah tahu kamu butuh ini.</h2>
+      <p>Akses selamanya. Bisa dibuka di HP atau laptop. Langsung tersedia setelah pembayaran.</p>
+      <a href="#" class="btn-cta btn-cta--white">🌿 Ya, Saya Mulai Sekarang — Rp127.000</a>
+      <div class="trust-line delay-1" style="margin-top:20px;justify-content:center;display:flex;gap:20px;flex-wrap:wrap;">
+        <span style="color:rgba(255,255,255,0.80);font-size:13px;">✓ Akses seumur hidup</span>
+        <span style="color:rgba(255,255,255,0.80);font-size:13px;">✓ Tanpa biaya bulanan</span>
+        <span style="color:rgba(255,255,255,0.80);font-size:13px;">✓ Pembayaran aman</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <p>© 2025 Usia Bertambah, Wajah Mengencang. Semua hak dilindungi.</p>
+  <p style="margin-top:8px;">Produk ini bukan pengganti saran atau tindakan medis profesional.</p>
+</footer>
+
+<!-- ===================== STICKY CTA (mobile) ===================== -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta__text">
+    <strong>Usia Bertambah, Wajah Mengencang</strong>
+    5–10 menit sehari · Mulai hari ini
+  </div>
+  <a href="#final-cta" class="btn-cta">Rp127.000 →</a>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq__trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item      = trigger.closest('.faq__item');
+      const isOpen    = item.classList.contains('open');
+
+      // close all first
+      document.querySelectorAll('.faq__item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq__trigger').setAttribute('aria-expanded', 'false');
+      });
+
+      // open clicked (toggle)
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Sticky CTA (mobile)
+  const stickyCta = document.getElementById('stickyCta');
+  const finalCta  = document.getElementById('final-cta');
+
+  window.addEventListener('scroll', () => {
+    const scrollY       = window.scrollY;
+    const finalCtaTop   = finalCta.getBoundingClientRect().top + scrollY;
+
+    if (scrollY > 420 && (scrollY + window.innerHeight) < finalCtaTop + 80) {
+      stickyCta.classList.add('show');
+    } else {
+      stickyCta.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
